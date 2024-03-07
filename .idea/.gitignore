@@ -9,4 +9,4 @@
 /mineral_store.iml
 
 .idea
-.sqlite
+db.sqlite3
