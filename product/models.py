@@ -7,6 +7,7 @@ class Product(models.Model):
     description = models.TextField(verbose_name="Description")
     image = models.ImageField(verbose_name="Image")
     type_id = models.OneToOneField("product.Type", on_delete=models.CASCADE)
+    availability = models.CharField(verbose_name="Avalibility")
 
 
 class Type(models.Model):
