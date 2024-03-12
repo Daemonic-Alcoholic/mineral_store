@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<header>
+    <nav class="navbar shadow-sm">
+        <div class="container">
+            {% with request.resolver_match.view_name as view_name %}
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link {% if view_name == 'homepage:index' %} active {% endif %}"
+                           href="{% url 'homepage:index' %}">
+                            Main page
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if view_name == 'contacts:contact' %} active {% endif %}"
+                           href="{% url 'contacts:contact' %}">
+                            Contacts
+                        </a>
+                    </li>
+                </ul>
+            {% endwith %}
+        </div>
+    </nav>
+</header>
