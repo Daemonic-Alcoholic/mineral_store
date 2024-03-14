@@ -15,6 +15,12 @@
                             Contacts
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if view_name == 'shipment:shipment_page' %} active {% endif %}"
+                           href="{% url 'shipment:shipment_page'  %}">
+                            Shipment info
+                        </a>
+                    </li>
                 </ul>
             {% endwith %}
         </div>
