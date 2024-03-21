@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from django.views.generic import DetailView
+
+from product.models import Product
 
 
 # Create your views here.
@@ -9,7 +12,7 @@ def product_detail(request, pk):
     return render(request, template_name, context)
 
 
-def product_list(request):
+class ProductDetailView(DetailView):
+    model = Product
     template_name = 'product/product_list.html'
-    context = {}
-    return render(request, template_name, context)
+    context_object_name = 'product'
